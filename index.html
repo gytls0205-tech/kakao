@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>서울 데이터 아틀라스</title><link rel="stylesheet" href="style.css"></head>
+<body><header><a class="brand" href="/">◈ <span>서울 데이터 아틀라스<small>SEOUL DATA ATLAS</small></span></a><span class="tag">LOCAL WORKSPACE <i></i></span></header>
+<main><aside><div class="eyebrow">지역을 읽는 새로운 시선</div><h1>데이터로 보는<br>서울의 오늘<span>.</span></h1><p class="intro">행정구역 위에 데이터를 더해<br>우리 지역의 변화를 살펴보세요.</p>
+<label for="dataset">01 &nbsp; 데이터 선택</label><div class="select-wrap"><select id="dataset"></select></div><p id="description" class="muted"></p>
+<label for="metric">02 &nbsp; 시각화 지표</label><select id="metric"></select>
+<div class="divider"></div><div class="eyebrow">DATA CONNECTION</div><p class="muted">data 폴더의 CSV를 자동으로 조회합니다.<br>파일을 추가한 뒤 목록을 새로고침하세요.</p><button id="refresh">↻ &nbsp; 데이터 목록 새로고침</button>
+<details><summary>카카오 지도 연결</summary><p class="muted">JavaScript 키와 localhost 도메인 등록이 필요합니다. 키는 이 브라우저에 보관됩니다.</p><input id="key" placeholder="JavaScript 키" aria-label="카카오 JavaScript 키"><button id="connect">지도 연결</button></details>
+<div class="source">경계: KOSTAT 2013 · 서울 25개 자치구<br>통계와 경계의 기준 시점을 확인하세요.</div></aside>
+<section class="workspace"><div class="title-row"><div><div class="eyebrow">SEOUL / DISTRICT OVERVIEW</div><h2 id="title">서울 자치구 현황</h2></div><span id="badge" class="pill">샘플 데이터</span></div>
+<div class="stats"><article><span>수치가 있는 지역</span><strong id="count">—</strong></article><article><span>자치구 단순 평균</span><strong id="average">—</strong></article><article><span>최고 수치 지역</span><strong id="highest">—</strong></article></div>
+<div class="map-frame"><div id="map"></div><svg id="fallback" viewBox="0 0 900 640" role="img" aria-label="서울 자치구 통계 지도"></svg><div class="map-caption" id="mode">행정구역 미리보기 · 카카오 배경 연결 전</div><button id="reset" class="reset">서울 전체 보기 ↗</button><div id="detail" class="detail">지역을 선택하면 상세 수치를 볼 수 있습니다.</div><div class="legend"><b id="legend-title">범례</b><div id="legend"></div></div></div>
+<div id="status" role="status"></div><div class="table-title"><h3>지역별 데이터</h3><span>수치 내림차순</span></div><div class="table-scroll"><table><thead><tr><th>자치구</th><th id="column">수치</th><th>분포</th></tr></thead><tbody id="rows"></tbody></table></div>
+</section></main><script type="module" src="app.js"></script></body></html>
