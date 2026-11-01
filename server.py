@@ -26,5 +26,5 @@ class Handler(SimpleHTTPRequestHandler):
             super().do_GET()
 
 if __name__ == '__main__':
-    print('서울 데이터 지도: http://localhost:8080', flush=True)
+    print('서울 데이터 지도: http://localhost:8000', flush=True)
     ThreadingHTTPServer(('127.0.0.1', 8080), Handler).serve_forever()
